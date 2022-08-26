@@ -2,17 +2,17 @@
     "family": "nginx",
     "networkMode": "host",
     "executionRoleArn": "arn:aws:iam::050485243139:role/ecsTaskExecutionRole",
-    "logConfiguration": {
-        "logDriver": "awslogs",
-        "options": {
-            "awslogs-group": "nginx-logs",
-            "awslogs-region": "sa-east-1",
-            "awslogs-stream-prefix": "docker"
-        }
-    },
     "containerDefinitions":
     [
         {
+            "logConfiguration": {
+                "logDriver": "awslogs",
+                "options": {
+                    "awslogs-group": "nginx-logs",
+                    "awslogs-region": "sa-east-1",
+                    "awslogs-stream-prefix": "docker"
+                }
+            },
             "name": "nginx",
             "image": "050485243139.dkr.ecr.sa-east-1.amazonaws.com/nginx",
             "cpu": 256,
