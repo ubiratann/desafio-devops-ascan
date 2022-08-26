@@ -25,9 +25,4 @@ resource "aws_ecs_service" "service" {
     container_port   = 80
   }
 
-  # network_configuration {
-  # security_groups = [aws_security_group.sg.id]
-  # subnets         = ["${aws_default_subnet.subnet_a.id}", "${aws_default_subnet.subnet_b.id}"]
-  #   assign_public_ip = false
-  # }
 }
