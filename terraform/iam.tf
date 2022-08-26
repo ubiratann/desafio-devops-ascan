@@ -1,5 +1,5 @@
 resource "aws_iam_role" "instance_role" {
-  name               = "ecs-instance-role"
+  name               = "ecsInstanceRole"
   assume_role_policy = data.aws_iam_policy_document.instance_policy.json
 }
 
@@ -14,7 +14,7 @@ resource "aws_iam_instance_profile" "profile" {
 }
 
 resource "aws_iam_role" "service_role" {
-  name               = "ecs-service-role"
+  name               = "ecsServiceRole"
   assume_role_policy = data.aws_iam_policy_document.service_policy.json
 }
 
