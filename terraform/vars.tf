@@ -27,3 +27,13 @@ variable "key_par_name" {
   type        = string
   description = "Key par name"
 }
+
+variable "app_name" {
+  type        = string
+  description = "Application name"
+}
+
+variable "container_name" {
+  type        = string
+  description = "Container name"
+}

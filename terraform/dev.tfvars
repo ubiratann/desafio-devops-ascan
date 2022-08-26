@@ -4,3 +4,5 @@ ami = "ami-06205847307e9f474" #Amazon Linux 2 Otimizado para ECS
 ecs_cluster_name = "ascan-cluster"
 ecr_name = "nginx"
 key_par_name = "ngninx-kp"
+container_name = "nginx"
+app_name = "nginx"

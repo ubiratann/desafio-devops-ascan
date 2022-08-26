@@ -4,7 +4,7 @@ resource "aws_ecs_cluster" "cluster" {
 
 resource "aws_ecs_task_definition" "task_definition" {
   container_definitions    = data.template_file.task_definition_json.rendered
-  family                   = "nginx"
+  family                   = var.app_name
   network_mode             = "host"
   memory                   = "512"
   cpu                      = "256"
@@ -21,7 +21,7 @@ resource "aws_ecs_service" "service" {
 
   load_balancer {
     target_group_arn = aws_lb_target_group.lb_target_group.arn
-    container_name   = "nginx"
+    container_name   = var.container_name
     container_port   = 80
   }
 

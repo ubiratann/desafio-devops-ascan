@@ -1,6 +1,6 @@
 resource "aws_lb" "loadbalancer" {
   internal           = false
-  name               = "ngnix-load-balancer"
+  name               = "${var.app_name}-load-balancer"
   subnets            = ["${aws_default_subnet.subnet_a.id}", "${aws_default_subnet.subnet_b.id}"]
   security_groups    = [aws_security_group.sg.id]
   load_balancer_type = "application"
@@ -8,10 +8,11 @@ resource "aws_lb" "loadbalancer" {
 
 resource "aws_lb_target_group" "lb_target_group" {
 
-  name     = "ngnix-target-group"
+  name     = "${var.app_name}-target-group"
   port     = "80"
   protocol = "HTTP"
   vpc_id   = aws_default_vpc.default.id
+
 }
 
 resource "aws_lb_listener" "lb_listener" {
