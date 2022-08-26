@@ -18,6 +18,14 @@
             "protocol": "tcp"
         }
     ],
+    "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+            "awslogs-group": "nginx-logs",
+            "awslogs-region": "sa-east-1",
+            "awslogs-stream-prefix": "docker"
+        }
+    },
     "essential": true,
     "entryPoint": [],
     "command": [],
