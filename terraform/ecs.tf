@@ -6,7 +6,7 @@ resource "aws_ecs_task_definition" "task_definition" {
   container_definitions    = data.template_file.task_definition_json.rendered
   family                   = var.app_name
   network_mode             = "host"
-  memory                   = "512"
+  memory                   = "256"
   cpu                      = "256"
   requires_compatibilities = ["EC2"]
   execution_role_arn       = aws_iam_role.task_execution_role.arn
