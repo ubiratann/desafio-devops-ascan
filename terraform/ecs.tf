@@ -13,12 +13,12 @@ resource "aws_ecs_task_definition" "task_definition" {
 }
 
 resource "aws_ecs_service" "service" {
-  cluster         = aws_ecs_cluster.cluster.id
-  desired_count   = 1
-  launch_type     = "EC2"
-  name            = "ascan-service"
-  task_definition = aws_ecs_task_definition.task_definition.arn
-
+  cluster              = aws_ecs_cluster.cluster.id
+  desired_count        = 1
+  launch_type          = "EC2"
+  name                 = "ascan-service"
+  task_definition      = aws_ecs_task_definition.task_definition.arn
+  force_new_deployment = true
   load_balancer {
     target_group_arn = aws_lb_target_group.lb_target_group.arn
     container_name   = var.container_name
