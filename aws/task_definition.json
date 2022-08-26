@@ -2,6 +2,14 @@
     "family": "nginx",
     "networkMode": "host",
     "executionRoleArn": "arn:aws:iam::050485243139:role/ecsTaskExecutionRole",
+    "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+            "awslogs-group": "nginx-logs",
+            "awslogs-region": "sa-east-1",
+            "awslogs-stream-prefix": "docker"
+        }
+    },
     "containerDefinitions":
     [
         {
