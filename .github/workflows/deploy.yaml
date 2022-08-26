@@ -10,8 +10,9 @@ env:
   ECS_SERVICE: ascan-service
   ECS_CLUSTER: ascan-cluster
   ECS_TASK_DEFINITION: terraform/templates/task_definition.json
-  CONTAINER_NAME: nginx 
-
+  CONTAINER_NAME: nginx
+  ECR_REPOSITORY: nginx
+  
 permissions:
   contents: read
 
