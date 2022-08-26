@@ -24,7 +24,7 @@ resource "aws_iam_role_policy_attachment" "service_attachment" {
 }
 
 resource "aws_iam_role" "task_execution_role" {
-  name               = "task-execution-role"
+  name               = "ecsTaskExecutionRole"
   assume_role_policy = data.aws_iam_policy_document.tasks_execution_policy.json
 }
 
